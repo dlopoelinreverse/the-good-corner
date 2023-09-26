@@ -6,6 +6,7 @@ type AdCardProps = {
   price: number;
   title: string;
   link: string;
+  addPrice: (price: number) => void;
 };
 export default function AdCard({
   id,
@@ -13,6 +14,7 @@ export default function AdCard({
   link,
   title,
   price,
+  addPrice,
 }: AdCardProps) {
   return (
     <div className="ad-card-container">
@@ -23,6 +25,7 @@ export default function AdCard({
           <div className="ad-card-price">{price} €</div>
         </div>
       </Link>
+      <button onClick={() => addPrice(price)}>Add price to total</button>
     </div>
   );
 }
